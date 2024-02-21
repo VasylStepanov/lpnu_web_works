@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Lab 2</title>
+  </head>
+  <body>
+    <script>
+      let age = parseInt(prompt("Введіть ваш вік"));
+      let b = age % 10;
+      let s;
+      switch (b) {
+        case 1:
+        s = "рік";
+        break;
+        case 2:
+        case 3:
+        case 4:
+        s = "роки";
+        break;
+        default: s = "років";
+      }
+      if (age > 10 && age < 20)
+      s = "років";
+      document.write("Вам - ", age, s);
+    </script>
+  </body>
+</html>

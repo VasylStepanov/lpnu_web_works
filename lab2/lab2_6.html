@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Lab 2</title>
+  </head>
+  <body>
+    <script>
+      let guess = Math.random() * 100; // генерація випадкового числа
+      guess = Math.floor(guess); // відкидання дробової частини
+      let f = true;
+      let number;
+      let count = 0;
+      let answer = confirm("Зіграємо?");
+      if (answer) {
+        while (f) {
+          number = parseInt(prompt("введіть число"));
+          count++;
+          if (number == guess) {
+            alert("Ви вгадали\n кількість спроб: "+ count);
+            f = false;
+          }
+          else if (number > guess) {
+            alert("Число менше, спробуйте ще раз");
+          }
+          else {
+            alert("Число більше, спробуйте ще раз");
+          }
+        }
+      }
+      else alert("Шкода.\nМоже бути в інший раз?");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Lab 2</title>
+  </head>
+  <body>
+    <script>
+      document.write("<p style='text-align:center'>Приклад знаходження більшого числа</p>");
+      let a = 1; let b = 22; let c = 3;
+      if (a > b && a > c) document.write("Найбільше серед трьох чисел - a=", a);
+      else if (b > c) document.write("Найбільше серед трьох чисел - b=", b);
+      else document.write("Найбільше серед трьох чисел - c=", c);
+      //Использование тернарной операции
+      let max = a > b ? a : b; max = max > c ? max : c;
+      document.write("<p>Значення найбільшого серед трьох чисел -", max);
+    </script>
+  </body>
+</html>
