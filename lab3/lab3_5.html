@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Lab 3</title>
+  </head>
+  <body>
+    <script>
+      function printText(txt, size = 14) {
+        document.write(`<div style="font-size:${size}pt">${txt}</div>`);
+      }
+      printText("<p>Big font", 42);
+      printText("<p>Default font - first row");
+      printText("<p>Default font - second row");
+      printText("<p>Small font", 6);
+    </script>
+  </body>
+</html>
