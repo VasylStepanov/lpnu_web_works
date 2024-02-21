@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Lab 4</title>
+  </head>
+  <body>
+    <script>
+      let fruits = ['apple', 'pineapple', 'mango', 'melon', 'grape'];
+      let citrus = ['orange', 'lemon', 'lime'];
+
+      console.log("Масив fruits:", fruits);
+      console.log("Масив citrus:", citrus);
+
+      let combinedArray = fruits.concat(citrus);
+      console.log("Об'єднаний масив fruits:", combinedArray);
+
+      fruits.splice(fruits.indexOf('mango') + 1, 0, 'pear', 'cherry', 'plum', 'raspberry', 'strawberry');
+      console.log("Масив fruits з вставленими елементами:", fruits);
+
+      fruits.splice(-3);
+      console.log("Масив fruits з видаленими останніми 3 елементами:", fruits);
+
+      console.log("Відсортований в алфавітному порядку масив fruits:", fruits.sort());
+
+      console.log("Масив fruits у зворотному алфавітному порядку:", fruits.reverse());
+
+      console.log("Масив fruits, відсортований за довжиною слів:", fruits.sort((a, b) => a.length - b.length));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Lab 4</title>
+  </head>
+  <body>
+    <script>
+      let treag = [];
+      for (let n = 1; n <= 10; n++) {
+          treag.push(n * (n + 1) / 2);
+      }
+
+      console.log(treag.join('  '));
+
+      let kvd = [];
+      for (let i = 1; i <= 10; i++) {
+          kvd.push(i ** 2);
+      }
+
+      console.log(kvd.join('  '));
+
+      let rez = [...treag, ...kvd];
+
+      console.log(rez.join('  '));
+
+      rez.sort((a, b) => b - a);
+
+      console.log(rez.join('  '));
+    </script>
+  </body>
+</html>

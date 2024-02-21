@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Lab 4</title>
+  </head>
+  <body>
+    <script>
+      let array = [];
+      for (let i = 0; i < 15; i++) {
+          array.push(Math.floor(Math.random() * 100));
+      }
+
+      console.log(array.join('  '));
+
+      let sum = 0;
+      let count = 0;
+      for (let i = 0; i < array.length; i++) {
+          if (i % 2 !== 0 && array[i] > 0) {
+              sum += array[i];
+              count++;
+          }
+      }
+      let average = count > 0 ? sum / count : 0;
+
+      let B = 50;
+
+      let lessThanBCount = array.filter(num => num < B).length;
+
+      console.log(`Середнє арифметичне додатних чисел на непарних місцях: ${average}`);
+      console.log(`Кількість чисел, менших за ${B}: ${lessThanBCount}`);
+    </script>
+  </body>
+</html>
