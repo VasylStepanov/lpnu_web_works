@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Lab 6</title>
+  </head>
+  <body>
+    <script>
+      function GameConsole(type, storageCapacity, maxResolution) {
+          this._type = type;
+          this._storageCapacity = storageCapacity;
+          this._maxResolution = maxResolution;
+      }
+
+      GameConsole.prototype = {
+          constructor: GameConsole,
+          get type() {
+              return this._type;
+          },
+          set type(value) {
+              this._type = value;
+          },
+          get storageCapacity() {
+              return this._storageCapacity;
+          },
+          set storageCapacity(value) {
+              this._storageCapacity = value;
+          },
+          get maxResolution() {
+              return this._maxResolution;
+          },
+          set maxResolution(value) {
+              this._maxResolution = value;
+          },
+          displayInfo: function() {
+              return `Type: ${this._type}, Storage Capacity: ${this._storageCapacity}, Max Resolution: ${this._maxResolution}`;
+          }
+      };
+
+      let myGameConsole = new GameConsole("PlayStation 5", "1TB", "4K");
+
+      console.log(myGameConsole.displayInfo());
+
+      console.log("Type:", myGameConsole.type);
+      myGameConsole.type = "Xbox Series X";
+      console.log("Type (after update):", myGameConsole.type);
+    </script>
+  </body>
+</html>

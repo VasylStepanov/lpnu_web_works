@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Lab 6</title>
+  </head>
+  <body>
+    <script>
+        class GameConsole {
+            constructor(type, storageCapacity, maxResolution, releaseDate) {
+                this._type = type;
+                this._storageCapacity = storageCapacity;
+                this._maxResolution = maxResolution;
+            }
+
+            get type() {
+                return this._type;
+            }
+            set type(value) {
+                this._type = value;
+            }
+
+            get storageCapacity() {
+                return this._storageCapacity;
+            }
+            set storageCapacity(value) {
+                this._storageCapacity = value;
+            }
+
+            get maxResolution() {
+                return this._maxResolution;
+            }
+            set maxResolution(value) {
+                this._maxResolution = value;
+            }
+
+
+            displayInfo() {
+                return `Type: ${this._type}, Storage Capacity: ${this._storageCapacity}, Max Resolution: ${this._maxResolution}`;
+            }
+        }
+
+        class UpgradedGameConsole extends GameConsole {
+            constructor(type, storageCapacity, maxResolution, releaseDate, cost) {
+                super(type, storageCapacity, maxResolution);
+                this._releaseDate = releaseDate;
+                this._cost = cost;
+            }
+
+            get releaseDate() {
+                return this._releaseDate;
+            }
+            set releaseDate(value) {
+                this._releaseDate = value;
+            }
+
+            get cost() {
+                return this._cost;
+            }
+            set cost(value) {
+                this._cost = value;
+            }
+
+            displayInfo() {
+                return `Type: ${this._type}, Storage Capacity: ${this._storageCapacity}, Max Resolution: ${this._maxResolution}, Release Date: ${this._releaseDate}, Cost: ${this._cost}`;
+            }
+        }
+
+        let upgradedConsole = new UpgradedGameConsole("PlayStation 5", "1TB", "4K", "2020-11-12", "$499");
+        console.log(upgradedConsole.displayInfo());
+
+        console.log("Release Date:", upgradedConsole.releaseDate);
+        upgradedConsole.releaseDate = "2021-11-12";
+        console.log("Release Date (after update):", upgradedConsole.releaseDate);
+    </script>
+  </body>
+</html>

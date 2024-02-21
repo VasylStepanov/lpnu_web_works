@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Lab 6</title>
+  </head>
+  <body>
+    <script>
+
+    class GameConsole {
+        constructor(type, storageCapacity, maxResolution, releaseDate) {
+            this._type = type;
+            this._storageCapacity = storageCapacity;
+            this._maxResolution = maxResolution;
+        }
+
+        get type() {
+            return this._type;
+        }
+        set type(value) {
+            this._type = value;
+        }
+
+        get storageCapacity() {
+            return this._storageCapacity;
+        }
+        set storageCapacity(value) {
+            this._storageCapacity = value;
+        }
+
+        get maxResolution() {
+            return this._maxResolution;
+        }
+        set maxResolution(value) {
+            this._maxResolution = value;
+        }
+
+
+        displayInfo() {
+            return `Type: ${this._type}, Storage Capacity: ${this._storageCapacity}, Max Resolution: ${this._maxResolution}`;
+        }
+    }
+
+    class UpgradedGameConsole extends GameConsole {
+        constructor(type, storageCapacity, maxResolution, releaseDate, cost) {
+            super(type, storageCapacity, maxResolution);
+            this._releaseDate = releaseDate;
+            this._cost = cost;
+        }
+
+        get releaseDate() {
+            return this._releaseDate;
+        }
+        set releaseDate(value) {
+            this._releaseDate = value;
+        }
+
+        get cost() {
+            return this._cost;
+        }
+        set cost(value) {
+            this._cost = value;
+        }
+
+        displayInfo() {
+            return `Type: ${this._type}, Storage Capacity: ${this._storageCapacity}, Max Resolution: ${this._maxResolution}, Release Date: ${this._releaseDate}, Cost: ${this._cost}`;
+        }
+    }
+
+    let consoles = [
+        new UpgradedGameConsole("PlayStation 5", "1TB", "4K", "2020-11-12", 499),
+        new UpgradedGameConsole("Xbox Series X", "1TB", "4K", "2020-11-10", 499),
+        new UpgradedGameConsole("Nintendo Switch", "32GB", "720p", "2017-03-03", 299),
+        new UpgradedGameConsole("PlayStation 4", "1TB", "1080p", "2013-11-15", 399)
+    ];
+
+    let maxCostConsole = consoles.reduce((max, console) => (console.cost > max.cost) ? console : max, consoles[0]);
+    console.log("Об'єкт з максимальною вартістю:", maxCostConsole);
+
+    let minCostConsole = consoles.reduce((min, console) => (console.cost < min.cost) ? console : min, consoles[0]);
+    console.log("Об'єкт з мінімальною вартістю:", minCostConsole);
+
+    let totalCost = consoles.reduce((sum, console) => sum + console.cost, 0);
+    console.log("Сумарна вартість усіх об'єктів:", totalCost);
+
+    let averageCost = totalCost / consoles.length;
+    console.log("Середня вартість об'єкта:", averageCost);
+
+    let aboveAverageCount = consoles.filter(console => console.cost > averageCost).length;
+    console.log("Кількість об'єктів з вартістю вище за середню:", aboveAverageCount);
+    </script>
+  </body>
+</html>
