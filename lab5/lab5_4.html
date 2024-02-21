@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Lab 5</title>
+  </head>
+  <body>
+    <script>
+      function shuffleLetters(word) {
+          if (word.length <= 2) {
+              return word;
+          }
+
+          let shuffled = word[0];
+          let middle = word.substring(1, word.length - 1).split('');
+          for (let i = middle.length - 1; i > 0; i--) {
+              const j = Math.floor(Math.random() * (i + 1));
+              [middle[i], middle[j]] = [middle[j], middle[i]];
+          }
+          shuffled += middle.join('');
+          shuffled += word[word.length - 1];
+
+          return shuffled;
+      }
+
+      function shuffleWordsInString(text) {
+          let words = text.split(' ');
+          let shuffledWords = words.map(word => shuffleLetters(word));
+          return shuffledWords.join(' ');
+      }
+
+      let message = "Hello, World! This is a test message.";
+      let shuffledMessage = shuffleWordsInString(message);
+      console.log("Результат перемішування літер:", shuffledMessage);
+    </script>
+  </body>
+</html>

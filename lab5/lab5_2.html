@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Lab 5</title>
+  </head>
+  <body>
+    <script>
+      let str = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+      console.log("Текст: ", str);
+
+      let words = str.split(" ");
+      let longWordsCount = words.filter(word => word.length > 5).length;
+      console.log("Кількість слів, довжина яких більше за 5:", longWordsCount);
+
+      let firstSpaceIndex = str.indexOf(" ");
+      let result = str.slice(0, firstSpaceIndex) + str.slice(firstSpaceIndex + 1);
+      console.log("Рядок з видаленими пробілами між першим і другим словом:", result);
+    </script>
+  </body>
+</html>

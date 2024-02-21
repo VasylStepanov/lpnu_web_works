@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Lab 5</title>
+  </head>
+  <body>
+    <script>
+      function insertDuplicateDigitsAndCountPairs(inputString) {
+          let resultString = '';
+          let pairCount = 0;
+
+          for (let i = 0; i < inputString.length; i++) {
+              resultString += inputString[i] + inputString[i]; // Додаємо кожну цифру двічі
+
+              if (i < inputString.length - 1 && inputString[i] === 'A' && inputString[i + 1] === 'C') {
+                  pairCount++; // Підрахунок пар 'AC'
+              }
+          }
+
+          return {resultString, pairCount};
+      }
+
+      let inputString = '1A2C3A4C5A6C';
+      let {resultString, pairCount} = insertDuplicateDigitsAndCountPairs(inputString);
+
+      console.log("Вхідний рядок:", inputString);
+      console.log("Рядок з подвоєними цифрами:", resultString);
+      console.log("Кількість пар 'AC' у рядку:", pairCount);
+    </script>
+  </body>
+</html>

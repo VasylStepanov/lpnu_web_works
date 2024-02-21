@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Lab 5</title>
+  </head>
+  <body>
+    <script>
+      function encrypt(text) {
+          let result = "";
+          for (let i = 0; i < text.length; i++) {
+              let char = text[i];
+              if (char == 'a') {
+                  result += 'z';
+              } else if (char == 'A') {
+                  result += 'Z';
+              } else {
+                  result += char;
+              }
+          }
+          return result;
+      }
+
+      let message = "Hello, World! Contries: Armenia, French, Germany, Poland";
+      let encryptedMessage = encrypt(message);
+      console.log("Зашифроване повідомлення:", encryptedMessage);
+    </script>
+  </body>
+</html>
